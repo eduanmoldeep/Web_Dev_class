@@ -1,0 +1,7 @@
+Vscode Build task for open in browser
+
+https://www.webucator.com/blog/2016/06/launch-files-browser-visual-studio-code/
+
+;) extra tip
+use tasks > build defaults instead of ctr 
+use "chrome" instead of "Chrome"
