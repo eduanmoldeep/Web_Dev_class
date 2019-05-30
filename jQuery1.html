@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+
+    <title>Document</title>
+</head>
+<body>
+    <span id="test"> Normal Text</span>
+
+    <script>
+        $(document).ready(function() {
+
+            var a = 2;
+            // alert("hello");
+            // $("#test").html("<b>Changed Text</b><br>");
+            // $("#test").html ("<b>Changed Text</b><br>");
+            // $("#test").text("<b>Changed Text</b>");
+
+            $("#test").html("<b>Changed Text</b> " + a);
+        });
+    </script>
+    
+</body>
+</html>
