@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery Example</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn-submit").click(function () {
+                // alert("Button Cicked");
+                var strName = $("#name").val();
+                var strEmail = $("#email").val();
+                console.log("name:" + strName);
+                console.log("Email:" + strEmail);
+
+
+                $("#str_name").text(strName);
+                $("#str_email").text(strEmail);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <button id="btn-submit">Click Me !</button> -->
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> -->
+
+    <!-- <script>
+        $(document).ready(function () {
+            $("#btn-submit").click(function () {
+                alert("Button Cicked");
+            });
+        });
+    </script> -->
+    <!-- </br> -->
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>jquery Example</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Your Email">
+                </div>
+                <button class="btn" type="button" id="btn-submit">Click Me!</button>
+            </div>
+            <div class="col-lg-4">
+                <div id="str_name"></div>
+                <div id="str_email"></div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>
