@@ -1,9 +1,81 @@
 <?php
 
 
+
+$flag = 1;
+$errors = array();
+
+if (isset($_POST['submit'])) {
+    
+    // checking student name
+    if (isset($_POST['std_name'])) {
+        if (empty($_POST['std_name'])) {
+            
+            array_push($errors, "Student Name is Empty");
+        } else {
+            // sab theek hai
+
+        }
+    } else {
+
+        $flag = 0;
+        array_push($errors, "Student Name not Found");
+    }
+
+    //validate student email
+    if (isset($_POST['std_email'])) {
+        if (empty($_POST['std_email'])) {
+            $flag = 0;
+            array_push($errors, "Email is Empty");
+        } else {
+            // sab theek hai
+
+        }
+    } else {
+
+        $flag = 0;
+        array_push($errors, "Email not Found");
+    }
+
+
+    // validate student phone
+    if (isset($_POST['std_phone'])) {
+        if (empty($_POST['std_phone'])) {
+            $flag = 0;
+            array_push($errors, "Phone Number is Empty");
+        } else {
+            // sab theek hai
+
+        }
+    } else {
+
+        $flag = 0;
+        array_push($errors, "Phone Number not Found");
+    }
+
+    // validate address
+
+    if (isset($_POST['std_email'])) {
+        if (empty($_POST['std_email'])) {
+            $flag = 0;
+            array_push($errors, "Email is Empty");
+        } else {
+            // sab theek hai
+
+        }
+    } else {
+
+        $flag = 0;
+        array_push($errors, "Email not Found");
+    }
+} else {
+    // echo "Use the form !!!!";
+}
+
+
 $result = FALSE;
 
-if(isset($_POST['submit'])){
+if($flag && isset($_POST['submit'])){
     $std_name = $_POST['std_name'];
     $std_email = $_POST['std_email'];    
     $std_phone = $_POST['std_phone'];
@@ -54,7 +126,8 @@ if(isset($_POST['submit'])){
     <br>
     <div class="container">
         <div class="jumbotron">
-            <h1>Student Info Home</h1>
+            <h1>Student Info Home <span class="text-primary"> || Add New Student</span> </h1>
+        <a href="/browse.php" class="btn btn-primary"> Browse Students </a>
         </div>
     </div>
 
@@ -66,7 +139,7 @@ if(isset($_POST['submit'])){
             <div class="col-4 col-4-lg">
                 <form action="index.php" method="post">
                 <?php
-
+                if(isset($_POST['submit']))
                 if($result){
 
                 ?>
