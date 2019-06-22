@@ -1,5 +1,16 @@
 <?php
+session_start();
 
+if(isset($_SESSION['login'])){
+    if(!$_SESSION['login']){
+        $_SESSION['error'] = "You need to Login First";
+        
+    } else {
+        header('Location:login.php');
+    } 
+} else {
+    header('Location:login.php');
+}
 $result;
 $conn;
 

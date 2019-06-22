@@ -1,0 +1,302 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 22, 2017 at 05:41 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `mini1`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `customerid` varchar(200) NOT NULL,
+  `customername` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`customerid`, `customername`) VALUES
+('custo1', 'custo one'),
+('custo10', 'custo eight'),
+('custo11', 'custo nine'),
+('custo2', 'custo two'),
+('custo3', 'custo three'),
+('custo4', 'custo four'),
+('custo5', 'custo one'),
+('custo6', 'custo four'),
+('custo7', 'custo five'),
+('custo8', 'custo six'),
+('custo9', 'custo seven');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer1`
+--
+
+CREATE TABLE `customer1` (
+  `customerid` varchar(200) NOT NULL,
+  `customername` varchar(200) NOT NULL,
+  `stoerid` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer1`
+--
+
+INSERT INTO `customer1` (`customerid`, `customername`, `stoerid`) VALUES
+('custo1', 'custo one', 'store1'),
+('custo10', 'custo eight', 'store8'),
+('custo11', 'custo nine', 'store9'),
+('custo2', 'custo two', 'store2'),
+('custo3', 'custo three', 'store3'),
+('custo4', 'custo four', 'store1'),
+('custo5', 'custo one', 'store4'),
+('custo6', 'custo four', 'store3'),
+('custo7', 'custo five', 'store5'),
+('custo8', 'custo six', 'store6'),
+('custo9', 'custo seven', 'store7');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer2`
+--
+
+CREATE TABLE `customer2` (
+  `customerid` varchar(200) NOT NULL,
+  `customername` varchar(200) NOT NULL,
+  `storeid` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer2`
+--
+
+INSERT INTO `customer2` (`customerid`, `customername`, `storeid`) VALUES
+('custo1', 'custo one', 'store1'),
+('custo10', 'custo eight', 'store8'),
+('custo11', 'custo nine', 'store9'),
+('custo2', 'custo two', 'store2'),
+('custo3', 'custo three', 'store3'),
+('custo4', 'custo four', 'store1'),
+('custo5', 'custo one', 'store4'),
+('custo6', 'custo four', 'store3'),
+('custo7', 'custo five', 'store5'),
+('custo8', 'custo six', 'store6'),
+('custo9', 'custo seven', 'store7');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pet`
+--
+
+CREATE TABLE `pet` (
+  `petid` varchar(200) NOT NULL,
+  `petname` varchar(200) NOT NULL,
+  `cost` int(10) NOT NULL,
+  `storeid` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pet`
+--
+
+INSERT INTO `pet` (`petid`, `petname`, `cost`, `storeid`) VALUES
+('pet1', 'Egyptian Mau', 1000, 'store1'),
+('pet10', 'Siamese cats', 5500, 'store8'),
+('pet11', 'Sphynx Cat', 6000, 'store9'),
+('pet2', 'Egyptian Mau', 1500, 'store2'),
+('pet3', 'Beagle', 2000, 'store3'),
+('pet4', 'German Shepherd', 5000, 'store1'),
+('pet5', 'Bulldog', 4000, 'store4'),
+('pet6', 'Persian Cat', 3500, 'store3'),
+('pet7', 'Munchkin Cat', 4000, 'store5'),
+('pet8', 'Labrador Retriever', 4500, 'store6'),
+('pet9', 'Golden Retriever', 5000, 'store7');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `purchase`
+--
+
+CREATE TABLE `purchase` (
+  `petid` varchar(200) NOT NULL,
+  `customerid` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `purchase`
+--
+
+INSERT INTO `purchase` (`petid`, `customerid`) VALUES
+('pet1', 'custo1'),
+('pet2', 'custo2'),
+('pet3', 'custo3'),
+('pet4', 'custo4'),
+('pet5', 'custo1'),
+('pet6', 'custo4'),
+('pet7', 'custo5'),
+('pet8', 'custo6'),
+('pet9', 'custo7'),
+('pet10', 'custo8'),
+('pet11', 'custo9');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `store`
+--
+
+CREATE TABLE `store` (
+  `storeid` varchar(200) NOT NULL,
+  `storename` varchar(200) NOT NULL,
+  `ownerid` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `store`
+--
+
+INSERT INTO `store` (`storeid`, `storename`, `ownerid`) VALUES
+('store1', 'store one', 1),
+('store2', 'store two', 2),
+('store3', 'store three', 3),
+('store4', 'store one', 1),
+('store5', 'store five', 2),
+('store6', 'store three', 3),
+('store7', 'store five', 4),
+('store8', 'store six', 6),
+('store9', 'store seven', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `storeowner`
+--
+
+CREATE TABLE `storeowner` (
+  `id` int(10) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `tel` int(10) NOT NULL,
+  `address` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `storeowner`
+--
+
+INSERT INTO `storeowner` (`id`, `name`, `tel`, `address`) VALUES
+(1, 'first', 1234567889, 'f 20'),
+(2, 'second', 1223455678, 'f 21'),
+(3, 'third', 1223455689, 'f 22'),
+(4, 'fourth', 1223455678, 'f 23'),
+(5, 'fifth', 1245234556, 'f 24'),
+(6, 'sixth', 1223455689, 'f 25'),
+(7, 'seventh', 1256452378, 'f 27'),
+(8, 'eight', 1223455678, 'f 27');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`customerid`);
+
+--
+-- Indexes for table `customer1`
+--
+ALTER TABLE `customer1`
+  ADD PRIMARY KEY (`customerid`),
+  ADD KEY `stoerid` (`stoerid`);
+
+--
+-- Indexes for table `customer2`
+--
+ALTER TABLE `customer2`
+  ADD PRIMARY KEY (`customerid`),
+  ADD KEY `storeid` (`storeid`);
+
+--
+-- Indexes for table `pet`
+--
+ALTER TABLE `pet`
+  ADD PRIMARY KEY (`petid`),
+  ADD KEY `storeid` (`storeid`);
+
+--
+-- Indexes for table `purchase`
+--
+ALTER TABLE `purchase`
+  ADD KEY `customerid` (`customerid`),
+  ADD KEY `petid` (`petid`);
+
+--
+-- Indexes for table `store`
+--
+ALTER TABLE `store`
+  ADD PRIMARY KEY (`storeid`),
+  ADD KEY `id` (`ownerid`);
+
+--
+-- Indexes for table `storeowner`
+--
+ALTER TABLE `storeowner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `customer1`
+--
+ALTER TABLE `customer1`
+  ADD CONSTRAINT `customer1_ibfk_1` FOREIGN KEY (`stoerid`) REFERENCES `pet` (`storeid`);
+
+--
+-- Constraints for table `customer2`
+--
+ALTER TABLE `customer2`
+  ADD CONSTRAINT `customer2_ibfk_1` FOREIGN KEY (`storeid`) REFERENCES `pet` (`storeid`);
+
+--
+-- Constraints for table `pet`
+--
+ALTER TABLE `pet`
+  ADD CONSTRAINT `pet_ibfk_1` FOREIGN KEY (`storeid`) REFERENCES `store` (`storeid`);
+
+--
+-- Constraints for table `purchase`
+--
+ALTER TABLE `purchase`
+  ADD CONSTRAINT `purchase_ibfk_1` FOREIGN KEY (`customerid`) REFERENCES `customer` (`customerid`),
+  ADD CONSTRAINT `purchase_ibfk_2` FOREIGN KEY (`petid`) REFERENCES `pet` (`petid`);
+
+--
+-- Constraints for table `store`
+--
+ALTER TABLE `store`
+  ADD CONSTRAINT `store_ibfk_1` FOREIGN KEY (`ownerid`) REFERENCES `storeowner` (`id`);
+COMMIT;
