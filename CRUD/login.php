@@ -30,6 +30,8 @@ if (isset($_POST['submit_login'])) {
             $_SESSION['error'] = "";
             $_SESSION['login'] = TRUE;
             $_SESSION['username'] = $row['user_full_name'];
+        } else {
+            
         }
     } else {
         $Errorflag = 1;
@@ -61,22 +63,27 @@ if (isset($_POST['submit_login'])) {
             <div class="col-4"></div>
             <div class="col-4"></div>
             <div class="col-4">
-                
-            <?php  
-            // add for login first
-            ?>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  <strong></strong> 
-                </div>
-                
-                <script>
-                  $(".alert").alert();
-                </script>
-            <?php
 
+                <?php
+                // add for login first
+                if (isset($_SESSION['login']) && $_SESSION['login'] === FALSE) {
+ 
+
+                    ?>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>You Need to Login First</strong>
+                    </div>
+
+                    <script>
+                        $(".alert").alert();
+                    </script>
+
+                <?php
+            }
+            ?>
                 <form action="login.php" method="post">
                     <div class="form-group">
                         <label for="user_email">Email</label>
