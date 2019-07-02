@@ -60,61 +60,52 @@ if (isset($_POST['submit_login'])) {
 
 <body>
     <div class=" container">
-        
+
         <div class="row">
-
-
-
+            <div class="col-4"></div>
             <div class="col-4">
-
-                <div class="container" style="background-color: rgba(0,0,0,0.4);">
-
-                    <div class="background">
-                        <img class="blur" src="http://www.kdfxfund.com/web/themes/kdfxfund/img/login-bg/bg-1.jpg" alt="">
-
-                        <div class="foreground">
-
-                            <?php if (isset($flag) && $flag === 1) { ?>
-                                <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        <span class="sr-only">Close</span>
-                                    </button>
-                                    <?= mysqli_error($conn) ?>
-                                </div>
-                            <?php } ?>
-
-                            <?php if (isset($_SESSION['error'])) { ?>
-                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        <span class="sr-only">Close</span>
-                                    </button>
-                                    <?= $_SESSION['error'] ?>
-                                </div>
-                            <?php } ?>
-
-                            <form action="login.php" method="post">
-                                <div class="form-group">
-                                    <label for="user_email" style="color:azure, font-size:24px"><b>Email</b></label>
-                                    <input type="email" class="form-control" name="user_email" id="user_email" placeholder="Enter User Email" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="user_password">Password</label>
-                                    <input type="password" class="form-control" name="user_password" id="user_password" placeholder="Enter Password">
-                                </div>
-                                <button type="submit" class="btn btn-primary" name="submit_login">Login</button>
-                                <br>
-                                &nbsp;
-                            </form>
-                        </div>
+            <br>
+                <?php if (isset($flag) && $flag === 1) { ?>
+                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <?= mysqli_error($conn) ?>
                     </div>
-                </div>
+                <?php } ?>
 
+                <?php if (isset($_SESSION['error'])) { ?>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <?= $_SESSION['error'] ?>
+                    </div>
+                <?php } ?>
+
+                <form action="login.php" method="post">
+                    <div class="form-group">
+                        <label for="user_email" style="color:azure, font-size:24px"><b>Email</b></label>
+                        <input type="email" class="form-control" name="user_email" id="user_email" placeholder="Enter User Email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="user_password"><b>Password</b></label>
+                        <input type="password" class="form-control" name="user_password" id="user_password" placeholder="Enter Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" name="submit_login">Login</button>
+                    <br>
+                    &nbsp;
+                </form>
             </div>
-            <div class="col-4"></div>
-            <div class="col-4"></div>
         </div>
+    </div>
+
+    </div>
+
+    <div class="col-4"></div>
+    </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
