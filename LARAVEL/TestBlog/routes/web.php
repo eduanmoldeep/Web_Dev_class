@@ -11,14 +11,19 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
+Route::get('/', 'StudentController@index');
+
+
+Route::get('/view', 'StudentController@view');
+
+
+Route::get('/add', 'StudentController@add');
+
+Route::get('/edit', 'StudentController@edit');
+
+// Route::get('/', 'BetaController@index');
+
+// Route::get('/home', function () {
+//     return view('home');
 // });
-
-
-Route::get('/', 'BetaController@index');
-
-Route::get('/home', function () {
-    return view('home');
-});
 
