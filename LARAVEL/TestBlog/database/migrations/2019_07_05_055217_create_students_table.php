@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBachcheTable extends Migration
+class CreateStudentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateBachcheTable extends Migration
      */
     public function up()
     {
-        Schema::create('_bachche', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('name', 50);
+            $table->string('email', 255);
+            $table->string('sem', 5);
+            $table->string('gender', 10);
             $table->timestamps();
-            
         });
     }
 
@@ -28,6 +30,6 @@ class CreateBachcheTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_bachche');
+        Schema::dropIfExists('students');
     }
 }

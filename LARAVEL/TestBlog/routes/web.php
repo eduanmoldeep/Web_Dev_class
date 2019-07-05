@@ -11,19 +11,18 @@
 |
 */
 
-Route::get('/', 'StudentController@index');
 
 
-Route::get('/view', 'StudentController@view');
-
-
-Route::get('/add', 'StudentController@add');
-
-Route::get('/edit', 'StudentController@edit');
-
-// Route::get('/', 'BetaController@index');
 
 // Route::get('/home', function () {
 //     return view('home');
 // });
 
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('student', 'StudentMasterController');
+Route::get('/', 'StudentMasterController@create');
