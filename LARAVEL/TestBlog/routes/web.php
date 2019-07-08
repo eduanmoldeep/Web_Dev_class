@@ -26,3 +26,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('student', 'StudentMasterController');
 Route::get('/', 'StudentMasterController@create');
+// use command - php artisan route:list - to display all routes
