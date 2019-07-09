@@ -23,7 +23,7 @@ class StudentMasterController extends Controller
      */
     public function create()
     {
-        return view('student/create');
+        return view('student.create');
     }
 
     /**
@@ -43,6 +43,16 @@ class StudentMasterController extends Controller
         
         //store in data base
         $student->save();
+
+        $phone = new \App\Phone();
+        $phone->student_id = $student->id;
+        $phone->phone= $request->get('std_phone');
+
+        $phone->save();
+
+        redirect('student/');
+
+
 
     }
 

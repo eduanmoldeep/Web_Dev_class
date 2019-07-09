@@ -25,5 +25,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('student', 'StudentMasterController');
-Route::get('/', 'StudentMasterController@create');
+
+Route::get('/', function () {
+    return view('index');
+});
+
 // use command - php artisan route:list - to display all routes

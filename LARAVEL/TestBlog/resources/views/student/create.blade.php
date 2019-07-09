@@ -15,6 +15,12 @@
             <input id="std_email" class="form-control" type="email" name="std_email">
         </div>
 
+
+        <div class="form-group">
+            <label for="std_phone">Student Phone</label>
+            <input class="form-control" type="text" name="std_phone" id="std_phone">
+        </div>
+
         <div class="form-group">
             <label for="std_sem">Student Semester</label>
             <select id="std_sem" class="form-control" name="std_sem">
@@ -37,6 +43,7 @@
             <option value="other">Other</option>
           </select>
         </div>
+
 
         <button type="submit" class="btn btn-primary">Create Student</button>
         </form>
