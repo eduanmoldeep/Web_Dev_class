@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        <!-- Here starts the page -->
         <form action="{{url('student')}}" method="post">
         <!-- csrf token needed to make sure not expired page -->
         @csrf
